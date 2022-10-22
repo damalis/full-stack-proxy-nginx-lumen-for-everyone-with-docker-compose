@@ -244,6 +244,8 @@ add or remove code in the ```./webserver/extra/httpd-vhosts.conf``` file for cus
 
 You may use the DB_* configuration options in your .env ```./lumen/webapp/.env``` configuration file to configure your database settings, such as the driver, host, username, and password.
 
+Database host = database
+
 [https://lumen.laravel.com/docs/9.x/database](https://lumen.laravel.com/docs/9.x/database)
 
 [https://mariadb.com/kb/en/configuring-mariadb-with-option-files/](https://mariadb.com/kb/en/configuring-mariadb-with-option-files/)
