@@ -247,9 +247,7 @@ add or remove code in the ```./webserver/extra/httpd-vhosts.conf``` file for cus
 
 #### Database
 
-You may use the DB_* configuration options in your .env ```./lumen/webapp/.env``` configuration file to configure your database settings, such as the driver, host, username, and password.
-
-Database host = database
+You may use the DB_* configuration options in your ```./lumen/webapp/.env``` configuration file to configure your database settings, such as the driver, host, username, and password.
 
 [https://lumen.laravel.com/docs/9.x/database](https://lumen.laravel.com/docs/9.x/database)
 
