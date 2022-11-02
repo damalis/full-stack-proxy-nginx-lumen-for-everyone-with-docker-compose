@@ -210,7 +210,7 @@ docker-compose up -d
 
 ### Website
 
-You should see the "Lumen (9.1.4) (Laravel Components ^9.21)" page in your browser. If not, please check if your PHP installation satisfies Lumen's requirements.
+You should see the "Lumen (9.*) (Laravel Components ^9.*)" page in your browser. If not, please check if your PHP installation satisfies Lumen's requirements.
 
 ```
 https://example.com
