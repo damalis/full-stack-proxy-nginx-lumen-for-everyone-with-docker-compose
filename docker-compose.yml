@@ -28,8 +28,8 @@ services:
             test: ["CMD-SHELL", "curl -fk https://${DOMAIN_NAME} || exit 1"]
             interval: 10s
             timeout: 5s
-            retries: 3
-            start_period: 10s
+            retries: 4
+            start_period: 60s
         environment:
             TZ: '${LOCAL_TIMEZONE}'
         labels:            
@@ -37,7 +37,7 @@ services:
         command: > 
             bash -c "apt-get -y update && apt-get install -y zip unzip libicu-dev && docker-php-ext-install pdo_mysql intl && docker-php-ext-enable pdo_mysql intl; curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && 
             if [ -f \"${WEBSERVER_DOC_ROOT}/webapp/.env\" ]; then composer update --prefer-dist --working-dir=${WEBSERVER_DOC_ROOT}/webapp; else composer create-project laravel/lumen webapp --prefer-dist; fi; 
-            grep -qe 'date.timezone = ${LOCAL_TIMEZONE}' ${PHP_INI_DIR_PREFIX}/php/conf.d/security.ini || echo 'date.timezone = ${LOCAL_TIMEZONE}' >> ${PHP_INI_DIR_PREFIX}/php/conf.d/security.ini; php-fpm"
+            sed -i \"s/DB_HOST=127.0.0.1/DB_HOST=database/\" ${WEBSERVER_DOC_ROOT}/webapp/.env; grep -qe 'date.timezone = ${LOCAL_TIMEZONE}' ${PHP_INI_DIR_PREFIX}/php/conf.d/security.ini || echo 'date.timezone = ${LOCAL_TIMEZONE}' >> ${PHP_INI_DIR_PREFIX}/php/conf.d/security.ini; php-fpm"
 
     webserver:
         depends_on:
