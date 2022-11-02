@@ -255,7 +255,7 @@ You may use the DB_* configuration options in your ```./lumen/webapp/.env``` con
 
 #### Redis
 
-The cache configuration is located in the .env ```./lumen/webapp/.env``` file.
+The cache configuration is located in the ```./lumen/webapp/.env``` file.
 
 Redis host = redis
 
